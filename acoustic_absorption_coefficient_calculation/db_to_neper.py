@@ -1,6 +1,6 @@
 import math
 
-def db_to_neper(attenuation, number):
+def db_to_neper(attenuation, number=1):
     '''
     Convert decibel values to nepers
     
@@ -9,9 +9,6 @@ def db_to_neper(attenuation, number):
     
     OUTPUTS:alpha - attenuation in Nepers/((rad/s)^y m)  
     '''
-    
-    if number == False:
-        number = 1
     
     alpha = 100 * attenuation * math.pow((1e-6/(2*math.pi)),number)/(20 * math.log10(math.exp(1)))
 
